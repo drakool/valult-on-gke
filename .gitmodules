@@ -1,0 +1,3 @@
+[submodule "web-private-targets/web-service-gin"]
+	path = web-private-targets/web-service-gin
+	url = git@github.com:drakool/web-service-gin.git

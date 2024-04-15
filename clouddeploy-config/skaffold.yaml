@@ -16,19 +16,18 @@ apiVersion: skaffold/v2beta7
 kind: Config
 build:
   artifacts:
-    - image: leeroy-web
-      context: leeroy-web
-    - image: leeroy-app
-      context: leeroy-app
+    - image: web-service-gin
+      context: web-service-gin
+    - image: web-service-gin
+      context: web-service-gin
   googleCloudBuild:
     projectId: vault-on-cloud-run-419505
 deploy:
   kubectl:
     manifests:
-      - leeroy-web/kubernetes/*
-      - leeroy-app/kubernetes/*
+      - web-service-gin/kubernetes/*
 portForward:
   - resourceType: deployment
-    resourceName: leeroy-web
+    resourceName: web-service-gin
     port: 8080
     localPort: 9000
