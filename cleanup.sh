@@ -15,12 +15,12 @@
 
 set -e
 
-TUTORIAL=private-targets
+PROJECT_NAME=tf-cicd-gke
 ROOT_DIR=$(git rev-parse --show-toplevel)
-TUTORIAL_DIR=${ROOT_DIR}/tutorials/${TUTORIAL}
-CD_CONFIG_DIR=${TUTORIAL_DIR}/clouddeploy-config
-TF_DIR=${TUTORIAL_DIR}/terraform-config
-KUBERNETES_DIR=${TUTORIAL_DIR}/kubernetes-config
+PROJECT_DIR=${ROOT_DIR}
+CD_CONFIG_DIR=${PROJECT_DIR}/clouddeploy-config
+TF_DIR=${PROJECT_DIR}/terraform-config
+#KUBERNETES_DIR=${PROJECT_DIR}/kubernetes-config
 GCLOUD_CONFIG=clouddeploy
 
 PROJECT_ID=$(gcloud config get-value core/project)
