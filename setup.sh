@@ -23,7 +23,7 @@ ROOT_DIR=$(git rev-parse --show-toplevel)
 PROJECT_DIR=${ROOT_DIR}
 CD_CONFIG_DIR=${PROJECT_DIR}/clouddeploy-config
 TF_DIR=${PROJECT_DIR}/terraform-config
-KUBERNETES_DIR=${PROJECT_DIR}/kubernetes-config
+#KUBERNETES_DIR=${PROJECT_DIR}/kubernetes-config
 GCLOUD_CONFIG=clouddeploy
 
 export PROJECT_ID=$(gcloud config get-value core/project)
@@ -68,7 +68,7 @@ run_terraform() {
     # Terraform workflows
 
     cd ${TF_DIR}
-
+    TF_LOG=DEBUG
     sed "s/bucket=.*/bucket=\"$BACKEND\"/g" main.template > main.tf
     gsutil mb gs://${BACKEND} || true
 
@@ -80,8 +80,8 @@ run_terraform() {
 configure_git() {
   # Ensures some base level git client config is present
 
-  git config user.name "Cloud Deploy"
-  git config user.email "noreply@google.com"
+  git config user.name "Mohamed Hany Ismail"
+  git config user.email "mohammed.hany@gmail.com"
 }
 
 private_targets_apps() {
@@ -96,10 +96,10 @@ private_targets_apps() {
 
     cp skaffold.yaml ${PROJECT_DIR}/web-private-targets/skaffold.yaml
 
-    git tag -a v1 -m "version 1 release"
+    git tag -a v3 -m "version 3 release"
 }
 
-manage_apis
+#manage_apis
 manage_configs
 run_terraform
 configure_git
