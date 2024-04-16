@@ -8,3 +8,14 @@ This project demonstrates the following:
 1. You need to export the mandatory parameter which is the GCP PROJECT_ID env variable.
 2. Optionally, you can modify the terraform's other variables which are already set with default values.
 
+## Deployment
+
+```
+cd web-private-targets && skaffold \
+    build --interactive=false \
+    --default-repo $(gcloud config \
+    get-value \
+    compute/region)-docker.pkg.dev/${PROJECT_ID}/web-app-private-targets \
+    --file-output artifacts.json \
+    && cd ..
+```

@@ -17,10 +17,10 @@ kind: Config
 build:
   artifacts:
     - image: web-service-gin
-      context: web-app-private-targets
+      context: web-service-gin
    
   googleCloudBuild:
-    projectId: ${PROJECT_ID}
+    projectId: vault-on-cloud-run-419505
 deploy:
   kubectl:
     manifests:
