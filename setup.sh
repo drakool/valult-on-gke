@@ -96,7 +96,7 @@ private_targets_apps() {
 
     cp skaffold.yaml ${PROJECT_DIR}/web-private-targets/skaffold.yaml
 
-    git tag -a v3 -m "version 3 release"
+    git tag -a v4 -m "version 3 release"
 }
 
 #manage_apis

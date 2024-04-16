@@ -18,11 +18,11 @@ metadata:
   name: staging-private
 description: staging cluster
 gke:
-  cluster: projects/vault-on-cloud-run-419505/locations/${REGION}/clusters/staging-private
+  cluster: projects/vault-on-cloud-run-419505/locations/us-central1/clusters/staging-private
 executionConfigs:
 - privatePool:
-    workerPool: projects/vault-on-cloud-run-419505/locations/${REGION}/workerPools/private-pool
-    serviceAccount: ${SERVICE_ACCOUNT}@vault-on-cloud-run-419505.iam.gserviceaccount.com
+    workerPool: projects/vault-on-cloud-run-419505/locations/us-central1/workerPools/private-pool
+    serviceAccount: gh-actions-sa@vault-on-cloud-run-419505.iam.gserviceaccount.com
   usages:
   - RENDER
   - DEPLOY

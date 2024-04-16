@@ -22,7 +22,8 @@ gke:
 executionConfigs:
 - privatePool:
     workerPool: projects/vault-on-cloud-run-419505/locations/us-central1/workerPools/private-pool
-    serviceAccount: cd-private-deploy-sa@vault-on-cloud-run-419505.iam.gserviceaccount.com
+    serviceAccount: 
+    gh-actions-sa@vault-on-cloud-run-419505.iam.gserviceaccount.com
   usages:
   - RENDER
   - DEPLOY

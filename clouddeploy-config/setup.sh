@@ -6,7 +6,8 @@ private_targets_apps() {
     echo "Configuring walkthrough applications"
 
     for template in $(ls *.template); do
-    envsubst '${PROJECT_ID}' < ${template} > ${template%.*}
+       envsubst  < ${template} > ${template%.*}
+    
     done
 
     cp skaffold.yaml ${PROJECT_DIR}/web-private-targets
