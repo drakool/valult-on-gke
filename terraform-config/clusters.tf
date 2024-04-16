@@ -30,6 +30,8 @@ module "cluster-test" {
   ip_range_services = ""
   release_channel   = "STABLE"
 }
+/*
+ * Only use test GKE cluster for the time being
 
 module "cluster-staging" {
   source            = "./modules/cluster"
@@ -56,6 +58,7 @@ module "cluster-prod" {
   ip_range_services = ""
   release_channel   = "STABLE"
 }
+*/
 
 resource "null_resource" "configure_peering" {
 

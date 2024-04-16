@@ -20,5 +20,6 @@ description: web-app delivery pipeline
 serialPipeline:
  stages:
  - targetId: test-private
- - targetId: staging-private
- - targetId: prod-private
+#skip the staging and and prod target for the time being
+# - targetId: staging-private
+# - targetId: prod-private
