@@ -19,7 +19,7 @@ resource "google_artifact_registry_repository" "artifact-registry" {
   provider = google-beta
 
   location      = var.region
-  repository_id = "web-service-gin"
+  repository_id = "web-app-private-targets"
   description   = "Image registry for for the backend docker images"
   format        = "DOCKER"
 }

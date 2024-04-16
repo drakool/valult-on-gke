@@ -16,7 +16,7 @@
 
 resource "google_service_account" "deploy_service_account" {
   project      = var.project_id
-  account_id   = "cd-private-deploy-sa"
+  account_id   = var.service_account
   display_name = "Cloud Deploy Deployment service account"
 }
 
