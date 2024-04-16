@@ -19,11 +19,11 @@ metadata:
 description: prod cluster
 requireApproval: true
 gke:
-  cluster: projects/vault-on-cloud-run-419505/locations/us-central1/clusters/prod-private
+  cluster: projects/vault-on-cloud-run-419505/locations/${REGION}/clusters/prod-private
 executionConfigs:
 - privatePool:
-    workerPool: projects/vault-on-cloud-run-419505/locations/us-central1/workerPools/private-pool
-    serviceAccount: cd-private-deploy-sa@vault-on-cloud-run-419505.iam.gserviceaccount.com
+    workerPool: projects/vault-on-cloud-run-419505/locations/${REGION}/workerPools/private-pool
+    serviceAccount: ${SERVICE_ACCOUNT}@vault-on-cloud-run-419505.iam.gserviceaccount.com
   usages:
   - RENDER
   - DEPLOY

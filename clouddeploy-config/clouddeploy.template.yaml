@@ -1,0 +1,28 @@
+apiVersion: deploy.cloud.google.com/v1
+kind: DeliveryPipeline
+metadata:
+  name: gke-web-service-gin
+description: main application pipeline
+serialPipeline:
+  stages:
+  - targetId: test-private
+  - targetId: staging-private
+  - targetId: prod-private
+---
+
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: gke-web-service-gin
+description: Web Service Gin development service
+run:
+  location: projects/${PROJECT_ID}/locations/us-central1
+---
+
+apiVersion: deploy.cloud.google.com/v1
+kind: Target
+metadata:
+  name: gke-web-service-gin
+description: Cloud Run production service
+run:
+  location: projects/${PROJECT_ID}/locations/us-central1

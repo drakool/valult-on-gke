@@ -72,7 +72,7 @@ run_terraform() {
     sed "s/bucket=.*/bucket=\"$BACKEND\"/g" main.template > main.tf
     gsutil mb gs://${BACKEND} || true
 
-    terraform init
+    terraform init -upgrade
     terraform plan -out=terraform.tfplan  -var="project_id=$PROJECT_ID" -var="region=$REGION"
     terraform apply -auto-approve terraform.tfplan
 }
