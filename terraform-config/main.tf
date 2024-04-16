@@ -16,17 +16,17 @@
 
 terraform {
   backend "gcs" {
-    bucket="web-service-gin"
+    bucket="vault-on-cloud-run-419505-tf-cicd-gke-tf"
     prefix="foundation"
   }
   required_providers {
     google = {
       source  = "hashicorp/google"
-      version = "~> 4.51.0"
+      version = "~> 4.53.0"
     }
     google-beta = {
       source  = "hashicorp/google-beta"
-      version = "~> 4.51.0"
+      version = "~> 4.53.0"
     }
   }
 }

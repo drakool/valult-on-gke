@@ -16,8 +16,8 @@
 
 resource "google_service_account" "deploy_service_account" {
   project      = var.project_id
-  account_id   = "cd-tut-private-deploy-sa"
-  display_name = "Cloud Deploy Deployment Strategies tutorial deploy service account"
+  account_id   = "cd-private-deploy-sa"
+  display_name = "Cloud Deploy Deployment service account"
 }
 
 resource "google_project_iam_member" "jobrunner_binding" {

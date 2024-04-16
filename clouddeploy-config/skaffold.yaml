@@ -18,8 +18,7 @@ build:
   artifacts:
     - image: web-service-gin
       context: web-service-gin
-    - image: web-service-gin
-      context: web-service-gin
+   
   googleCloudBuild:
     projectId: vault-on-cloud-run-419505
 deploy:
