@@ -73,7 +73,7 @@ run_terraform() {
     gsutil mb gs://${BACKEND} || true
 
     terraform init -upgrade
-    terraform plan -out=terraform.tfplan  -var="project_id=$PROJECT_ID" -var="region=$REGION"
+    terraform plan -out=terraform.tfplan  -var="service_account=$SERVICE_ACCOUNT"  -var="project_id=$PROJECT_ID" -var="region=$REGION"
     terraform apply -auto-approve terraform.tfplan
 }
 
