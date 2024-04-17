@@ -22,6 +22,9 @@ variable "region" {
   description = "GCP region in which to build the infrastructure"
 }
 
+variable "service_account"{
+  description = "the service account allowed to deploy using skaffold and cloud deploy"
+}
 variable "gke_asn" {
   default     = "64513"
   description = "ASN for GKE side VPN"
