@@ -32,6 +32,12 @@ resource "google_project_iam_member" "developer_binding" {
   member  = "serviceAccount:${google_service_account.deploy_service_account.email}"
 }
 
+resource "google_project_iam_member" "bucket_creator" {
+  project = var.project_id
+  role    = storage.buckets.create
+  member  = "serviceAccount:${google_service_account.deploy_service_account.email}"
+}
+
 /* Vault secret and keyring.
 Create the Cloud KMS encryption key that will be used to encrypt and decrypt the Vault master key: */
 
