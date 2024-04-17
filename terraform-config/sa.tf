@@ -32,7 +32,7 @@ resource "google_project_iam_member" "developer_binding" {
   member  = "serviceAccount:${google_service_account.deploy_service_account.email}"
 }
 
-resource "google_project_iam_member" "developer_binding" {
+resource "google_project_iam_member" "project" {
   project = var.project_id
   role    = "roles/storage.buckets.create"
   member  = "serviceAccount:${google_service_account.deploy_service_account.email}"
