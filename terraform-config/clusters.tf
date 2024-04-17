@@ -58,7 +58,7 @@ module "cluster-prod" {
   ip_range_services = ""
   release_channel   = "STABLE"
 }
-*/
+
 
 resource "null_resource" "configure_peering" {
 
@@ -75,3 +75,4 @@ resource "null_resource" "configure_peering" {
     }
   }
 }
+*/
